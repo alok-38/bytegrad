@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import CountLabel from './CountLabel';
 
 function Count({ initialValue }) {
     // useState hook to manage the count state
@@ -15,20 +16,22 @@ function Count({ initialValue }) {
     };
 
     return (
-        <div className="flex justify-center text-5xl font-thin gap-3 items-center">
-            <button 
-                className="hover:bg-orange-500 border-2 text-black border-orange-400 hover:text-white w-20 h-10 rounded-full flex items-center justify-center"
-                onClick={increment} // Attach onClick event to call increment function
-            >
-                +
-            </button>
-            <span className="text-5xl">{count}</span> {/* Display the count */}
-            <button 
-                className="hover:bg-red-500 border-2 border-red-400 text-black hover:text-white w-20 h-10 rounded-full flex items-center justify-center"
-                onClick={decrement} // Attach onClick event to call decrement function
-            >
-                -
-            </button>
+        <div className="flex flex-col items-center">
+            <div className="flex justify-center text-5xl font-thin gap-3 items-center">
+                <button 
+                    className="hover:bg-orange-500 border-2 text-black border-orange-400 hover:text-white w-20 h-20 rounded-full flex items-center justify-center"
+                    onClick={increment} // Attach onClick event to call increment function
+                >
+                    <span role="img" aria-label="Up arrow">&#x2B06;</span>
+                </button>
+                <button 
+                    className="hover:bg-red-500 border-2 border-red-400 text-black hover:text-white w-20 h-20 rounded-full flex items-center justify-center"
+                    onClick={decrement} // Attach onClick event to call decrement function
+                >
+                    <span role="img" aria-label="Down arrow">&#x2B07;</span>
+                </button>
+            </div>
+            <CountLabel count={count} />
         </div>
     );
 }
