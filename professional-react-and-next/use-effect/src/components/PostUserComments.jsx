@@ -1,7 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function PostUserComments() {
     const [resourceType, setResourceType] = useState('posts');
+
+    useEffect(() => {
+        console.log('render');
+    }, [resourceType])
 
     return (
         <>
