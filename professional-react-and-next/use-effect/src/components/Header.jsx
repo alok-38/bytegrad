@@ -6,15 +6,15 @@ function Header() {
 
   return (
     <>
-      <div>
+      <div className='flex justify-center'>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
-        <h1>UseEffect</h1>
       </div>
+      <h1 className='mb-5 text-5xl'>UseEffect</h1>
     </>
   )
 }
