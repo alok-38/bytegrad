@@ -26,11 +26,12 @@ function App() {
                 <div className='flex flex-col'>
                     <Header />
                     <DisplayCounter count={count} />
-                    <Counter increment={increment} decrement={decrement} />
                     <Reset reset={reset} />
                 </div>
             </div>
-            <Footer />
+            <div className='bg-lime-950 max-w-sm mx-auto'>
+            <Counter increment={increment} decrement={decrement} />
+            </div>
         </>
     );
 }
