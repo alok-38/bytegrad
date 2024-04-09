@@ -8,7 +8,7 @@ function Card() {
         <>
             <div className='rounded-t-lg bg-lime-500 flex flex-col justify-center items-center'>
                 <Title />
-                <Count />
+                <Count number={0} />
                 <Reset />
             </div>
             <div>
