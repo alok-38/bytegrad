@@ -1,7 +1,7 @@
-function DisplayCounter() {
+function DisplayCounter({ count }) {
     return (
-        <div className="text-center mt-5 font-bold text-9xl">0</div>
-    )
+        <div className="text-center mt-5 font-bold text-9xl">{count}</div>
+    );
 }
 
-export default DisplayCounter
+export default DisplayCounter;
