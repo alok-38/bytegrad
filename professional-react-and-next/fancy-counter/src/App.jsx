@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <main>
+      <main className='max-w-sm mx-auto mt-48 '>
         <Card />
       </main>
     </>

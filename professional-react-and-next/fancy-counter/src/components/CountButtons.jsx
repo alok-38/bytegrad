@@ -1,6 +1,6 @@
 function CountButtons() {
     return (
-        <div>
+        <div className="bg-lime-950">
             <button>-</button>
             <button>+</button>
         </div>

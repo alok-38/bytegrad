@@ -5,12 +5,16 @@ import Title from './Title';
 
 function Card() {
     return (
-        <div>
-            <Count />
-            <CountButtons />
-            <Reset />
-            <Title />
-        </div>
+        <>
+            <div className='rounded-t-lg bg-lime-500 flex flex-col justify-center items-center'>
+                <Title />
+                <Count />
+                <Reset />
+            </div>
+            <div>
+                <CountButtons />
+            </div>
+        </>
     )
 }
 
