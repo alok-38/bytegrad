@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <main className='w-[476px] h-[615px]'>
+      <main className='text-center h-auto'>
         <Card />
       </main>        
     </>

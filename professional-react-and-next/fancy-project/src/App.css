@@ -9,3 +9,28 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.reset-btn:hover,
+.reset-btn:focus {
+  opacity: 0.5;
+}
+
+.reset-btn-icon {
+  color: #1d2507;
+  height: 40px;
+  width: 40px;
+}
+
+.count-btn-icon {
+  color: floralwhite;
+  opacity: 0.9;
+  height: 40px;
+  width: 40px;
+}
+
+@media (max-width: 1000px) {
+  main {
+    width: 90%;
+    margin: auto;
+  }
+}

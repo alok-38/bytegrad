@@ -24,9 +24,9 @@ export default function CountButton({ type, setCount, locked }) {
   return (
     <button disabled={locked} onClick={handleClick}>
       {type === "minus" ? (
-        <MinusIcon className="count-btn-icon" />
+        <MinusIcon className="count-btn-icon hover:text-orange-600" />
       ) : (
-        <PlusIcon className="count-btn-icon" />
+        <PlusIcon className="count-btn-icon hover:text-red-600" />
       )}
     </button>
   );

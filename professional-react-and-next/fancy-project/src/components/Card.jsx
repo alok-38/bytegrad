@@ -29,16 +29,18 @@ export default function Card() {
   }, [count]);
 
   return (
-    <div className="bg-[#bef227]">
+    <div className="bg-[#bef227] w-[476px]">
         <div className={`card ${locked ? "card--limit" : ""}`}>
-      <Title className="mt-10" locked={locked} />
-      <Count count={count} />
-      <ResetButton setCount={setCount} />
-      <ButtonContainer>
+        <Title locked={locked} />
+        <Count count={count} />
+        <ResetButton setCount={setCount} />
+        </div>
+        <div>
+        <ButtonContainer>
         <CountButton type="minus" setCount={setCount} locked={locked} />
         <CountButton type="plus" setCount={setCount} locked={locked} />
       </ButtonContainer>
-    </div>
+        </div>
     </div>
   );
 }
