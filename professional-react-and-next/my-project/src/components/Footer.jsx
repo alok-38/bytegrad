@@ -3,7 +3,7 @@ import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
 export default function Footer() {
     return (
         <footer className="fixed bottom-0 left-0 w-full bg-gray-200 shadow-md py-4 px-6">
-            <div className="flex justify-between">
+            <div className="flex justify-between p-5">
                 <div className="flex gap-20">
                     <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
                         <FaGithub />
@@ -21,7 +21,6 @@ export default function Footer() {
                     <a href="/privacy">Privacy Policy</a>
                 </div>
             </div>
-            <p className='text-center'>&copy;Alok {new Date().getFullYear()}</p>
         </footer>
     );
 }
