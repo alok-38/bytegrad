@@ -1,6 +1,6 @@
 export default function Navbar() {
     return (
-        <ul className="flex justify-between">
+        <ul className="flex justify-center gap-10 mb-5">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Services</a></li>
