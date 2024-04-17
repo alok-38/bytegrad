@@ -10,3 +10,21 @@ body {
   background: #f1f5f8;
   color: #222;
 }
+
+/* Media query for screens with a maximum width of 640px */
+@media (max-width: 640px) {
+  section {
+    display: flex;
+    flex-direction: column;
+    /* Additional styles specific to the section in column layout */
+    align-items: center;
+  }
+
+  article {
+    margin-bottom: 20px;
+  }
+
+  img {
+    margin-bottom: 20px;
+  }
+}

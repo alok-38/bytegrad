@@ -3,7 +3,7 @@ export default function Book(props) {
 
     return (
         <article>
-            <img src={img} alt={title}></img>
+            <img className="w-80" src={img} alt={title}></img>
             <h2>{title}</h2>
             <h4>{author}</h4>
         </article>
