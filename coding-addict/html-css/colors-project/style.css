@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+}
+
+.containers {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: #ffffff;
+    padding: 2%;
+    margin: 2.5%;
+    line-height: 2;
+}
+
+.special-container {
+    background-color: rebeccapurple;
+    color: floralwhite;
+}
+
+.first-container,
+.second-container {
+    margin-bottom: 25px;
+}
+
+.first-container,
+.second-container,
+.special-container {
+    padding: 1.5%;
+}
+
+.first-container h3,
+.second-container h3 {
+    color: orangered;
+}
+
+h3 {
+    font-size: 2em;
+}
