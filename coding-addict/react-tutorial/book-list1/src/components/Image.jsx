@@ -1,6 +1,8 @@
+import Book from '../images/book.jpg';
+
 const Image = () => (
     <img className="mb-5"
-      src='https://images-na.ssl-images-amazon.com/images/I/71m+Qtq+HrL._AC_UL900_SR900,600_.jpg'
+      src={Book}
       alt='Interesting Facts For Curious Minds'
     />
 );

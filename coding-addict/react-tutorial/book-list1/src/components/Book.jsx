@@ -1,13 +1,9 @@
-import Image from './Image';
-import Title from './Title';
-import Author from './Author';
+import BookDetails from './BookDetails';
 
 const Book = () => {
     return (
         <article>
-            <Image  />
-            <Title />
-            <Author />
+            <BookDetails />
         </article>
     );
 }
