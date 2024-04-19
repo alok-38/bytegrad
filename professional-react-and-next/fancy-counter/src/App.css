@@ -1,0 +1,45 @@
+body {
+  background-image: radial-gradient(ellipse, #385300, #212900);
+  height: 100vh;
+}
+
+button {
+  all: unset;
+}
+
+.reset-btn {
+  cursor: pointer;
+  opacity: 0.3;
+  transition: all 0.4s;
+}
+
+.reset-btn:hover,
+.reset-btn:focus {
+  opacity: 0.5;
+}
+
+.reset-btn-icon {
+  color: #1d2507;
+  height: 40px;
+  width: 40px;
+}
+
+.count-btn:first-child {
+  border-right: 1px solid rgba(189, 254, 0, 0.07);
+}
+
+.count-btn:hover,
+.count-btn:focus {
+  background-color: #212b06;
+}
+
+.count-btn--plus {
+  border-left: 1px solid rgba(189, 254, 0, 0.15);
+}
+
+.count-btn-icon {
+  color: #bdfe00;
+  opacity: 0.9;
+  height: 40px;
+  width: 40px;
+}
