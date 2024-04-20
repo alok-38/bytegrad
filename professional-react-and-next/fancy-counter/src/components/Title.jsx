@@ -1,5 +1,13 @@
-export default function Title() {
+export default function Title({ locked }) {
     return (
-        <h1 className="text-3xl mt-10">Fancy Counter</h1>
+      <h1 className="title">
+        {locked ? (
+          <span>
+            Limit! Buy <b>Pro</b> for &gt;5
+          </span>
+        ) : (
+          "Fancy Counter"
+        )}
+      </h1>
     );
-}
+  }

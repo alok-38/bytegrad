@@ -1,17 +1,42 @@
-import Title from "./Title";
+import { useEffect, useState } from "react";
 import Count from "./Count";
-import CountButtons from "./CountButtons";
-import Reset from "./Reset";
+import ButtonContainer from "./ButtonContainer";
+import CountButton from "./CountButtons";
+import ResetButton from "./Reset";
+import Title from "./Title";
 
 export default function Card() {
-    return (
-        <div className="flex justify-center items-center h-screen">
-            <div className="bg-[#bef227] flex flex-col justify-center items-center text-center h-[615px] w-[476px] gap-32">
-                <Title />
-                <Count number={6} size="lg" />
-                <Reset />
-                <CountButtons />
-            </div>
-        </div>
-    );
+  const [count, setCount] = useState(0);
+  const locked = count === 5 ? true : false;
+
+  useEffect(() => {
+    const handleKeydown = (event) => {
+      if (event.code === "Space") {
+        const newCount = count + 1;
+        if (newCount > 5) {
+          setCount(5);
+          return;
+        }
+        setCount(newCount);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeydown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeydown);
+    };
+  }, [count]);
+
+  return (
+    <div className={`card ${locked ? "card--limit" : ""}`}>
+      <Title locked={locked} />
+      <Count count={count} />
+      <ResetButton setCount={setCount} />
+      <ButtonContainer>
+        <CountButton type="minus" setCount={setCount} locked={locked} />
+        <CountButton type="plus" setCount={setCount} locked={locked} />
+      </ButtonContainer>
+    </div>
+  );
 }
