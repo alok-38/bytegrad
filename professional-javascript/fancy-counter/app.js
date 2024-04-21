@@ -1,83 +1,68 @@
-const h1Element = document.querySelector(".counter__title");
-const spanElement = document.querySelector(".counter__value");
-const resetButton = document.querySelector(".counter__reset-button");
-const increaseButton = document.querySelector(".counter__button--increase");
-const decreaseButton = document.querySelector(".counter__button--decrease");
+// Selecting DOM elements
+const elements = {
+  h1: document.querySelector(".counter__title"),
+  span: document.querySelector(".counter__value"),
+  resetButton: document.querySelector(".counter__reset-button"),
+  increaseButton: document.querySelector(".counter__button--increase"),
+  decreaseButton: document.querySelector(".counter__button--decrease"),
+};
 
-// Function to increase the count
+// Function to update counter value in DOM
+const updateCounter = (value) => {
+  elements.span.textContent = value;
+};
+
+// Function to handle count increase
 const increaseCount = () => {
-  let currentCounterValue = parseInt(spanElement.textContent);
-  // Check if the counter value is less than 5 before incrementing
-  if (currentCounterValue < 5) {
-    let newCounterValue = currentCounterValue + 1;
-    spanElement.textContent = newCounterValue;
-    // Disable the "+" button and update the h1 element if counter reaches 5
-    if (newCounterValue >= 5) {
-      h1Element.innerHTML = "Limit! Buy <b>Pro</b> for >5";
-      // Disable both increase and decrease buttons
-      increaseButton.disabled = true;
-      decreaseButton.disabled = true;
-      // Unfocus
-      increaseButton.blur();
+  const currentValue = parseInt(elements.span.textContent);
+  if (currentValue < 5) {
+    const newValue = currentValue + 1;
+    updateCounter(newValue);
+    if (newValue >= 5) {
+      elements.h1.innerHTML = "Limit! Buy <b>Pro</b> for >5";
+      disableButtons();
     }
   }
 };
 
-increaseButton.addEventListener("click", increaseCount);
-
-// Add event listener for keydown event
-document.addEventListener("keydown", (event) => {
-  // Check if the pressed key is the "ArrowUp" key or spacebar and if the counter is less than 5
-  if (
-    (event.key === "ArrowUp" || event.key === " ") &&
-    parseInt(spanElement.textContent) < 5
-  ) {
-    increaseCount();
-  }
-});
-
-// Function to decrease the count
+// Function to handle count decrease
 const decreaseCount = () => {
-  let currentCounterValue = parseInt(spanElement.textContent);
-  let newCounterValue = currentCounterValue - 1;
-  // If the new value is less than 0
-  if (newCounterValue < 0) {
-    // Force it to remain at 0
-    newCounterValue = 0;
+  let currentValue = parseInt(elements.span.textContent);
+  let newValue = Math.max(0, currentValue - 1);
+  updateCounter(newValue);
+  if (newValue < 5) {
+    enableButtons();
+    elements.h1.textContent = "Fancy Counter";
   }
-  // Update the displayed value in the HTML
-  spanElement.textContent = newCounterValue;
-  // Enable both buttons and update the title if counter drops below 5
-  if (newCounterValue < 5) {
-    decreaseButton.disabled = false;
-    increaseButton.disabled = false;
-    h1Element.textContent = "Fancy Counter";
-  }
-  // unfocus (blur) button
-  decreaseButton.blur();
 };
 
-decreaseButton.addEventListener("click", decreaseCount);
+// Function to disable both increase and decrease buttons
+const disableButtons = () => {
+  elements.increaseButton.disabled = true;
+  elements.decreaseButton.disabled = true;
+  elements.increaseButton.blur();
+};
 
-// Add event listener for keydown event
+// Function to enable both increase and decrease buttons
+const enableButtons = () => {
+  elements.increaseButton.disabled = false;
+  elements.decreaseButton.disabled = false;
+  elements.resetButton.blur();
+};
+
+// Event listeners
+elements.increaseButton.addEventListener("click", increaseCount);
+elements.decreaseButton.addEventListener("click", decreaseCount);
+elements.resetButton.addEventListener("click", () => {
+  updateCounter(0);
+  enableButtons();
+  elements.h1.textContent = "Fancy Counter";
+});
+
 document.addEventListener("keydown", (event) => {
-  // Check if the pressed key is the "ArrowDown" key
-  if (event.key === "ArrowDown") {
+  if (event.key === "ArrowUp" || event.key === " ") {
+    increaseCount();
+  } else if (event.key === "ArrowDown") {
     decreaseCount();
   }
 });
-
-// Function to reset
-const resetCount = () => {
-  spanElement.textContent = "0"; // Reset the counter value to 0
-  increaseButton.disabled = false; // Ensure the increase button is enabled
-  decreaseButton.disabled = false;
-  h1Element.textContent = "Fancy Counter";
-  // unfocus (blur) reset button
-  resetButtonEl.blur();
-
-  // Remove the keydown event listener
-  document.removeEventListener("keydown", increaseCount);
-};
-
-resetButton.addEventListener("click", resetCount);
