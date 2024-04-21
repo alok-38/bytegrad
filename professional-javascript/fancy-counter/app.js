@@ -53,9 +53,19 @@ const decreaseCount = () => {
     increaseButton.disabled = false;
     h1Element.textContent = "Fancy Counter";
   }
+  // unfocus (blur) button
+  decreaseButton.blur();
 };
 
 decreaseButton.addEventListener("click", decreaseCount);
+
+// Add event listener for keydown event
+document.addEventListener("keydown", (event) => {
+  // Check if the pressed key is the "ArrowDown" key
+  if (event.key === "ArrowDown") {
+    decreaseCount();
+  }
+});
 
 // Function to reset
 const resetCount = () => {
@@ -63,6 +73,8 @@ const resetCount = () => {
   increaseButton.disabled = false; // Ensure the increase button is enabled
   decreaseButton.disabled = false;
   h1Element.textContent = "Fancy Counter";
+  // unfocus (blur) reset button
+  resetButtonEl.blur();
 
   // Remove the keydown event listener
   document.removeEventListener("keydown", increaseCount);
