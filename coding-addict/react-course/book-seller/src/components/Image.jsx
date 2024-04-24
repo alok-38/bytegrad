@@ -1,7 +1,7 @@
-import Book1 from "../assets/images/book-1.jpg";
+import book1 from '../assets/images/book-1.jpg'
 
 export default function Image() {
 	return (
-		<img className="w-72" src={Book1} alt="picture of a book"></img>
+		<img className='w-72 mb-5' src={book1} alt='book-1'></img>
 	);
 }

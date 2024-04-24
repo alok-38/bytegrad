@@ -1,19 +1,15 @@
-import Book from "./components/Book";
-import './App.css';
-import Header from "./components/Header";
+import Book from './components/Book'
+import Header from './components/Header';
 
 export default function App() {
   return (
     <>
       <Header />
-      <main className="flex flex-wrap gap-20 max-w-screen-lg  text-center mx-auto justify-center">
+      <div className='flex max-w-7xl text-center justify-evenly mx-auto flex-wrap'>
         <Book />
         <Book />
         <Book />
-        <Book />
-        <Book />
-        <Book />
-      </main>
+      </div>
     </>
   );
 }

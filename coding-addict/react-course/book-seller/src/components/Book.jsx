@@ -1,13 +1,13 @@
 import Author from "./Author";
-import Title from "./Title";
 import Image from "./Image";
+import Title from "./Title";
 
 export default function Book() {
 	return (
-		<article>
+		<div>
 			<Image />
 			<Title />
 			<Author />
-		</article>
+		</div>
 	);
 }

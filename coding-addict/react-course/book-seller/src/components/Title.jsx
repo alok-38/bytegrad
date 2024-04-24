@@ -1,5 +1,5 @@
 export default function Title() {
 	return (
-		<h2>Title</h2>
+		<h2 className="mb-2">Interesting Facts For Curious Minds</h2>
 	);
 }
