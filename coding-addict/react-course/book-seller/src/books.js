@@ -1,7 +1,9 @@
-import img1 from './images/book-1.jpg';
-import img2 from './images/book-2.jpg';
-import img3 from './images/book-3.jpg';
-export const books = [
+// books.js
+import img1 from './assets/images/book-1.jpg';
+import img2 from './assets/images/book-2.jpg';
+import img3 from './assets/images/book-3.jpg';
+
+const books = [
   {
     author: 'Jordan Moore',
     title: 'Interesting Facts For Curious Minds',
@@ -21,3 +23,5 @@ export const books = [
     id: 3,
   },
 ];
+
+export default books;

@@ -1,5 +1,3 @@
-export default function Author() {
-	return (
-		<h4 className="text-cyan-700">Jordon Moore</h4>
-	)
+export default function Author({ author }) {
+	return <h4 className="text-cyan-700">{author}</h4>;
 }

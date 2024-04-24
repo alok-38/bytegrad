@@ -1,20 +1,18 @@
-import Author from "./Author";
-import Image from "./Image";
-import Title from "./Title";
-import '../App.css'
+import Title from './Title';
+import Image from './Image';
+import Author from './Author';
+import books from '../books';
 
 export default function Book() {
-    return (
-        <div className="book-container p-5 bg-white rounded-2xl	">
-            <div className="flex justify-center">
-                <div className="max-w-md ">
-                    <Image />
-                    <div className="book-details">
-                        <Title />
-                        <Author />
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+	return (
+		<div className='flex flex-wrap text-center justify-center gap-10 '>
+			{books.map((book) => (
+				<div className='bg-white p-7 rounded-lg' key={book.id}>
+					<Image img={book.img} />
+					<Title title={book.title} />
+					<Author author={book.author} />
+				</div>
+			))}
+		</div>
+	);
 }
