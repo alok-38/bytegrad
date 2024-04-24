@@ -1,5 +1,5 @@
 export default function Author() {
 	return (
-		<h4 className="mb-10">Jordon Moore</h4>
+		<h4 className="text-cyan-700">Jordon Moore</h4>
 	)
 }
