@@ -58,6 +58,37 @@ const increaseCount = () => {
 	updateDecreaseButtonState();
 }
 
+// Function to handle keydown events
+const handleKeyDown = (event) => {
+	if (event.key === ' ' || event.key === 'ArrowUp') {
+		// If space bar or up arrow key is pressed, increase count
+		increaseCount();
+	}
+};
+
+// Add event listener for keydown events on the document
+document.addEventListener('keydown', handleKeyDown);
+
+// Function to handle keydown (down arrow) event
+const handleDownArrow = (event) => {
+	if (event.key === 'ArrowDown') {
+		decreaseCount();
+	}
+}
+
+// Add event listener for keydown events on the document
+document.addEventListener('keydown', handleDownArrow);
+
+// Function to handle keydown events for resetting the count
+const handleResetKey = (event) => {
+	if (event.key === 'Escape') { // Change the key as per your preference
+		resetCount();
+	}
+};
+
+// Add event listener for keydown events on the document
+document.addEventListener('keydown', handleResetKey);
+
 decreaseButton.addEventListener('click', decreaseCount);
 resetButton.addEventListener('click', resetCount);
 increaseButton.addEventListener('click', increaseCount);
