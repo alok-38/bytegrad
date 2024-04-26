@@ -5,7 +5,7 @@ const twitterStats = document.querySelector('.stat__number--twitter');
 const facebookStats = document.querySelector('.stat__number--facebook');
 
 let spaceBarCount = 0;
-let twitterCharacterLimit = parseInt(twitterStats.textContent);
+const twitterCharacterLimit = parseInt(twitterStats.textContent);
 const facebookCharacterLimit = parseInt(facebookStats.textContent);
 
 const updateCounts = () => {
