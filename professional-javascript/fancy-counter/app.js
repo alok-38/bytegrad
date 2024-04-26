@@ -1,94 +1,63 @@
-const h1Element = document.querySelector('.counter__title');
-const spanElement = document.querySelector('.counter__value');
-const resetButton = document.querySelector('.counter__reset-button');
-const decreaseButton = document.querySelector('.counter__button--decrease');
-const increaseButton = document.querySelector('.counter__button--increase');
+const elements = {
+	h1: document.querySelector('.counter__title'),
+	span: document.querySelector('.counter__value'),
+	resetButton: document.querySelector('.counter__reset-button'),
+	decreaseButton: document.querySelector('.counter__button--decrease'),
+	increaseButton: document.querySelector('.counter__button--increase')
+};
 
-// Global variable
 let count = 0;
-// Initial display
-spanElement.textContent = count;
-// Initial h1 display
-const h1ElementDisplay = h1Element.textContent;
+const initialH1Text = elements.h1.textContent;
 
-const updateDecreaseButtonState = () => {
-	decreaseButton.disabled = count === 0; // Disable if count is 0
-}
+const updateButtonState = () => {
+	elements.decreaseButton.disabled = count === 0;
+	elements.increaseButton.disabled = count === 5;
+};
 
-const updateIncreaseButtonState = () => {
-	increaseButton.disabled = count === 5; // Disable if count is 5
-}
+const updateCounter = () => {
+	elements.span.textContent = count;
+	if (count === 5) {
+		elements.h1.innerHTML = 'Limit! Buy <b>Pro</b> for >5';
+		elements.increaseButton.disabled = true;
+	} else if (count === 4) {
+		elements.h1.innerHTML = initialH1Text;
+	}
+	updateButtonState();
+};
 
 const decreaseCount = () => {
-	if (count === 0) return;
-	count -= 1;
-	spanElement.textContent = count;
-	if (count === 4) {
-		h1Element.innerHTML = h1ElementDisplay;
+	if (count > 0) {
+		count -= 1;
+		updateCounter();
 	}
-	// Update the state of the decrease button
-	updateDecreaseButtonState();
-	// Update the state of the increase button
-	updateIncreaseButtonState();
-}
+};
 
 const resetCount = () => {
 	count = 0;
-	spanElement.textContent = count;
-	if (count === 0) {
-		h1Element.innerHTML = h1ElementDisplay;
-	}
-	// Reset button states
-	updateDecreaseButtonState();
-	updateIncreaseButtonState();
-}
+	elements.h1.innerHTML = initialH1Text;
+	updateCounter();
+	updateButtonState();
+};
 
 const increaseCount = () => {
 	if (count < 5) {
 		count += 1;
-		spanElement.textContent = count;
-		if (count === 5) {
-			h1Element.innerHTML = 'Limit! Buy <b>Pro</b> for >5';
-			// Disable the increase button when count reaches 5
-			increaseButton.disabled = true;
-			return;
-		}
+		updateCounter();
 	}
-	// Update the state of the decrease button
-	updateDecreaseButtonState();
-}
+};
 
-// Function to handle keydown events
 const handleKeyDown = (event) => {
 	if (event.key === ' ' || event.key === 'ArrowUp') {
-		// If space bar or up arrow key is pressed, increase count
 		increaseCount();
-	}
-};
-
-// Add event listener for keydown events on the document
-document.addEventListener('keydown', handleKeyDown);
-
-// Function to handle keydown (down arrow) event
-const handleDownArrow = (event) => {
-	if (event.key === 'ArrowDown') {
+	} else if (event.key === 'ArrowDown') {
 		decreaseCount();
-	}
-}
-
-// Add event listener for keydown events on the document
-document.addEventListener('keydown', handleDownArrow);
-
-// Function to handle keydown events for resetting the count
-const handleResetKey = (event) => {
-	if (event.key === 'Escape') { // Change the key as per your preference
+	} else if (event.key === 'Escape') {
 		resetCount();
 	}
+	updateButtonState();
 };
 
-// Add event listener for keydown events on the document
-document.addEventListener('keydown', handleResetKey);
-
-decreaseButton.addEventListener('click', decreaseCount);
-resetButton.addEventListener('click', resetCount);
-increaseButton.addEventListener('click', increaseCount);
+document.addEventListener('keydown', handleKeyDown);
+elements.decreaseButton.addEventListener('click', decreaseCount);
+elements.resetButton.addEventListener('click', resetCount);
+elements.increaseButton.addEventListener('click', increaseCount);
