@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fancy Counter</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div
+      class="bg-[#bef227] h-[615px] w-[476px] rounded-t-3xl flex flex-col place-items-center"
+    >
+      <header class="mt-10 w-[200px]">
+        <h1
+          class="uppercase text-center tracking-wide font-semibold text-[32px]"
+        >
+          FANCY <span class="block">COUNTER</span>
+        </h1>
+      </header>
+      <main>
+        <section class="text-[200px] font-semibold">0</section>
+        <section class="mb-10 text-center">
+          <button class="counter__reset-button">
+            <i class="fas fa-sync-alt counter__reset-icon"></i>
+          </button>
+        </section>
+      </main>
+      <footer class="flex justify-center bg-[#1d2507] h-[116px] w-[100%]">
+        <button
+          class="counter__button counter__button--decrease flex items-center justify-center"
+        >
+          <i class="fas fa-minus counter__icon counter__icon--minus"></i>
+        </button>
+        <button
+          class="counter__button counter__button--increase flex items-center justify-center"
+        >
+          <i class="fas fa-plus counter__icon counter__icon--plus"></i>
+        </button>
+      </footer>
+    </div>
+  </body>
+</html>
