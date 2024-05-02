@@ -4,41 +4,54 @@ const resetButton = document.querySelector(".counter__reset-button");
 const decreaseButton = document.querySelector(".counter__button--decrease");
 const increaseButton = document.querySelector(".counter__button--increase");
 
+let h1Content = h1Element.textContent;
+let h1Color = h1Element.style.color;
+
 const decreaseCount = () => {
   let count = parseInt(countElement.textContent);
   if (count > 0) {
     countElement.textContent = count - 1;
-  }
-  if (count - 1 === 0) {
-    disableButton();
+    if (count === 5) {
+      h1Element.textContent = h1Content;
+      h1Element.style.color = h1Color;
+      enableButton(increaseButton); // Re-enable the increase button when count decreases below 5
+    }
+    if (count === 1) {
+      disableButton(decreaseButton);
+    }
   }
 };
-
-decreaseButton.addEventListener("click", decreaseCount);
 
 const increaseCount = () => {
   let count = parseInt(countElement.textContent);
-  let newCount = ++count;
+  let newCount = count + 1;
   countElement.textContent = newCount;
-  enableButton();
-};
-
-increaseButton.addEventListener("click", increaseCount);
-
-const resetCount = () => {
-  let count = parseInt(countElement.textContent);
-  if (count > 0) {
-    countElement.textContent = 0;
-    disableButton();
+  if (newCount >= 5) {
+    disableButton(increaseButton);
+    h1Element.innerHTML = "Limit! Buy <b>Pro</b> for &gt;5";
+    h1Element.style.color = "orangered";
+  }
+  if (newCount > 0) {
+    enableButton(decreaseButton);
   }
 };
 
-resetButton.addEventListener("click", resetCount);
-
-const disableButton = () => {
-  decreaseButton.disabled = true;
+const resetCount = () => {
+  countElement.textContent = 0;
+  disableButton(decreaseButton);
+  enableButton(increaseButton);
+  h1Element.textContent = h1Content;
+  h1Element.style.color = h1Color;
 };
 
-const enableButton = () => {
-  decreaseButton.disabled = false;
+decreaseButton.addEventListener("click", decreaseCount);
+increaseButton.addEventListener("click", increaseCount);
+resetButton.addEventListener("click", resetCount);
+
+const disableButton = (button) => {
+  button.disabled = true;
+};
+
+const enableButton = (button) => {
+  button.disabled = false;
 };
