@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Analytics</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body class="font-['Inter'] bg-[#e1e8eb] flex flex-col items-center">
+    <div class="background"></div>
+    <h1 class="first-heading text-[65px] tracking-wider	uppercase mt-[75px] font-semibold">
+      Word<span class="first-heading--special font-light">Analytics</span>
+    </h1>
+    <main class="container max-w-[1050px] h-[520px] bg-[#fff] rounded-3xl mt-[55px] overflow-hidden flex">
+      <textarea
+        class="textarea resize-none px-[30px] py-[40px] text-[22px]"
+        spellcheck="false"
+        placeholder="Enter your text"
+      ></textarea>
+
+      <section class="stats bg-[#f1f6f8] flex flex-wrap">
+        <section class="stat">
+          <span class="stat__number stat__number--words">0</span>
+          <h2 class="second-heading">Words</h2>
+        </section>
+        <section class="stat">
+          <span class="stat__number stat__number--characters">0</span>
+          <h2 class="second-heading">Characters</h2>
+        </section>
+        <section class="stat">
+          <span class="stat__number stat__number--twitter">280</span>
+          <h2 class="second-heading">Twitter</h2>
+        </section>
+        <section class="stat">
+          <span class="stat__number stat__number--facebook">2200</span>
+          <h2 class="second-heading">Facebook</h2>
+        </section>
+      </section>
+    </main>
+    <footer class="footer">
+      <small class="copyright"
+        >&copy; Copyright by Alok. All rights reserved.</small
+      >
+      <small class="data">Last checked limits: 17 days ago</small>
+    </footer>
+  </body>
+</html>
