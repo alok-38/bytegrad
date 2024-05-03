@@ -36,13 +36,6 @@ function updateTwitterCharLimit() {
   spanTwitterElement.textContent = charCountLeft;
 }
 
-// Update char limit on backspace
-textAreaElement.addEventListener("keydown", (event) => {
-  if (event.key === "Backspace") {
-    updateTwitterCharLimit();
-  }
-});
-
 // Facebook character limit
 function updateFacebookCharLimit() {
   const charCount = textAreaElement.value.length;
@@ -50,9 +43,10 @@ function updateFacebookCharLimit() {
   spanFacebookElement.textContent = charCountLeft;
 }
 
-// Update char limit on backspace
+// Update char limits on backspace
 textAreaElement.addEventListener("keydown", (event) => {
   if (event.key === "Backspace") {
+    updateTwitterCharLimit();
     updateFacebookCharLimit();
   }
 });
