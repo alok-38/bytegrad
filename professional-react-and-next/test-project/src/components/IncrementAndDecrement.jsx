@@ -5,8 +5,13 @@ import { MdRefresh } from "react-icons/md";
 export default function IncrementAndDecrement() {
   const [count, setCount] = useState(0);
   const resetCount = () => {
-    // Optionally, add a confirmation prompt here
-    setCount(0);
+    // Show confirmation prompt
+    const confirmed = window.confirm(
+      "Are you sure you want to reset the count?"
+    );
+    if (confirmed) {
+      setCount(0);
+    }
   };
   return (
     <div className="flex justify-center flex-col items-center mt-60">
