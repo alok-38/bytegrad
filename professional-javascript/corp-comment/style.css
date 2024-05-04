@@ -1,0 +1,34 @@
+/* RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: initial;
+}
+
+textarea {
+  font: inherit;
+  border: initial;
+  resize: none;
+  outline: initial; /* Remove default outline */
+
+  /* Custom focus styling */
+  border: 1px solid #ccc; /* Add a border */
+}
+
+textarea:focus {
+  /* Custom focus styling */
+  border-color: #007bff; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a box shadow on focus */
+}
