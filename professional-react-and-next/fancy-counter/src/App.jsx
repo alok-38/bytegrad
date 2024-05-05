@@ -1,9 +1,10 @@
-import Card from "./components/Card";
+function App() {
 
-export default function App() {
   return (
-    <main className="w-[100%] flex justify-center items-center h-screen">
-      <Card />
-    </main>
-  );
+    <>
+      <p>Hello from Vite!</p>
+    </>
+  )
 }
+
+export default App
