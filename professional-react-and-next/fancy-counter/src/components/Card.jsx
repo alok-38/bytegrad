@@ -1,6 +1,7 @@
 import Header from "./Header";
 import CountDisplay from "./CountDisplay";
 import ResetButton from "./ResetButton";
+import CountButton from "./CountButton";
 
 export default function Card() {
   let countValue = 0;
@@ -9,6 +10,7 @@ export default function Card() {
       <Header />
       <CountDisplay count={countValue} />
       <ResetButton />
+      <CountButton />
     </div>
   );
 }
