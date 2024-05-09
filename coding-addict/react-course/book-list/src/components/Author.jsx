@@ -1,3 +1,3 @@
-const Author = () => <h4>Author</h4>;
+const Author = () => <h4>Jordan Moore</h4>;
 
 export default Author;
