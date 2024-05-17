@@ -326,3 +326,12 @@ button {
 .button:focus {
   background-color: #26438d;
 }
+
+.artboard {
+  height: calc(100vh - 50px - 55px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -25px;
+  column-gap: 20px;
+}
