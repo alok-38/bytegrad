@@ -1,0 +1,61 @@
+/* RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: initial;
+}
+
+textarea {
+  font: inherit;
+  border: initial;
+  resize: none;
+  outline: initial; /* create alternative for focus state */
+}
+
+button {
+  font: inherit;
+  border: initial;
+  outline: initial; /* create alternative for focus state */
+  background-color: initial;
+}
+
+/* UTILITIES */
+.u-bold {
+  font-weight: 600;
+}
+
+.u-medium {
+  font-weight: 500;
+}
+
+.u-italic {
+  font-style: italic;
+}
+
+.u-transparent {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* BASE */
+.body {
+  background-image: linear-gradient(200deg, #654a86, #534292);
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  scrollbar-width: none; /* Firefox */
+}
