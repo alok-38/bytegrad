@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+textarea {
+  all: unset;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #e1e8eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 254px;
+  width: 100%;
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("https://images.unsplash.com/photo-1462332420958-a05d1e002413?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGdhbGF4eXwwfHwwfHx8MA%3D%3D");
+  background-size: cover;
+  background-blend-mode: overlay;
+}
+
+.first-heading {
+  font-size: 65px;
+  letter-spacing: 2px; /* Reduced letter spacing for better readability */
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95); /* Adjusted opacity for better contrast */
+  margin-top: 75px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow for better visibility */
+}
+
+.first-heading--special {
+  font-weight: 300;
+}
+
+.container {
+  width: 1050px;
+  height: 520px;
+  background-color: #ffffff; /* Use hex color format for consistency */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Increased blur for a softer shadow */
+  margin-top: 55px;
+  display: flex;
+  overflow: hidden;
+  position: relative; /* Added position property for absolute positioning of child elements */
+}
+
+/* Add hover effect for better interactivity */
+.container:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+/* Optional: Add transition for smooth hover effect */
+.container {
+  transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow property */
+}
+
+.textarea {
+  resize: none;
+  flex: 2;
+  font: inherit;
+  padding: 30px 40px;
+  font-size: 22px;
+}
+
+.textarea::placeholder {
+  font-weight: 500;
+  color: #959c9f;
+}
+
+.stats {
+  flex: 1.3; /* Adjusted flex value for better responsiveness */
+  background-color: #f1f6f8;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Added spacing between stats */
+}
+
+.stat {
+  flex: 0 150px; /* Changed to fix width and adjusted flex value */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Added border for clarity */
+  border-radius: 8px; /* Added border-radius for rounded corners */
+  margin: 10px; /* Added margin for spacing between stats */
+}
+
+.stat:nth-child(1),
+.stat:nth-child(2) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.stat:nth-child(2),
+.stat:nth-child(4) {
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.stat__number {
+  color: #4d5457;
+  font-weight: 600;
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+.stat__number--limit {
+  color: red;
+}
+
+.second-heading {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #747a7c;
+}
+
+.footer {
+  width: 1050px;
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.4;
+}
+
+@media (max-width: 1150px) {
+  .container {
+    width: 85vw;
+    flex-direction: column;
+  }
+
+  .first-heading {
+    font-size: 7vw;
+  }
+
+  .stat {
+    padding: 15px 10px;
+  }
+
+  .stat__number {
+    font-size: 20px;
+  }
+
+  .footer {
+    width: initial;
+    flex-direction: column;
+    align-items: center;
+  }
+}
