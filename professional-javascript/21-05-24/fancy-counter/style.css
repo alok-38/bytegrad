@@ -124,3 +124,8 @@ body {
     border-bottom-right-radius: 0;
   }
 }
+
+/* Blur effect */
+.blur {
+  filter: blur(2px);
+}
