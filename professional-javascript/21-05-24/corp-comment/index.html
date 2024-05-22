@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link
       rel="icon"
       type="image/png"
@@ -24,14 +23,13 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css" />
-
     <script src="app.js" defer></script>
-
     <title>CorpComment -- Give Feedback, Publicly</title>
   </head>
 
   <body class="body">
     <div class="body__container">
+      <!-- Footer -->
       <footer class="footer">
         <small class="copyright">
           <p class="copyright__text">
@@ -52,7 +50,9 @@
         </small>
       </footer>
 
+      <!-- Main content -->
       <main class="app">
+        <!-- Header with form -->
         <header class="header">
           <img
             src="https://bytegrad.com/course-assets/js/1/pattern.svg"
@@ -77,6 +77,8 @@
               maxlength="150"
               type="text"
               placeholder="Enter feedback"
+              required
+              aria-label="Enter your feedback here"
             ></textarea>
             <label for="textarea" class="form__label"
               >Enter your feedback here, remember to
@@ -85,18 +87,20 @@
             ></label>
             <div class="form__bottom">
               <p class="counter u-italic">150</p>
-              <button class="submit-btn">
+              <button class="submit-btn" type="submit">
                 <span class="submit-btn__text">Submit</span>
               </button>
             </div>
           </form>
         </header>
 
+        <!-- Feedback list -->
         <ol class="feedbacks">
-          <!-- <div class="spinner"></div> -->
+          <!-- Placeholder or dynamically generated feedback items go here -->
         </ol>
       </main>
 
+      <!-- Hashtags section -->
       <ul class="hashtags">
         <li class="hashtags__item">
           <button class="hashtag">#ByteGrad</button>
