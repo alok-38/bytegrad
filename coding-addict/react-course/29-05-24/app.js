@@ -1,9 +1,17 @@
 const app = document.getElementById("app");
 
-// arrow function also works
+function Greeting() {
+  return (
+    <div>
+      <Person />
+      <Message />
+    </div>
+  );
+}
 
-const Greeting = () => {
-  return <h2>My First Component</h2>;
+const Person = () => <h2>john doe</h2>;
+const Message = () => {
+  return <p>this is my message</p>;
 };
 
 const root = ReactDOM.createRoot(app);
