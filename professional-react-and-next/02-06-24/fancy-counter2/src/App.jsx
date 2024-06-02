@@ -1,3 +1,6 @@
+import Count from "./components/Count";
+import CountButtons from "./components/CountButtons";
+import ResetButton from "./components/ResetButton";
 import Title from "./components/Title";
 
 export default function App() {
@@ -5,12 +8,9 @@ export default function App() {
     <main>
       <div>
         <Title />
-        <p>0</p>
-        <button>Reset</button>
-        <div>
-          <button>+</button>
-          <button>-</button>
-        </div>
+        <Count />
+        <ResetButton />
+        <CountButtons />
       </div>
     </main>
   );
