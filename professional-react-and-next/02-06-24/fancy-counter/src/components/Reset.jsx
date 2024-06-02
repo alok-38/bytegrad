@@ -1,7 +1,14 @@
 import { ResetIcon } from "@radix-ui/react-icons";
-export default function Reset() {
+import { useState } from "react";
+export default function Reset({ resetCount }) {
+  const [count, setCount] = useState(0);
+
+  const resetCount = () => {
+    setCount(0);
+  };
+
   return (
-    <button className="block mx-auto">
+    <button onClick={resetCount} className="block mx-auto cursor-pointer">
       <ResetIcon />
     </button>
   );
