@@ -1,3 +1,3 @@
-export default function DisplayCounter({count}) {
-  return <span>{count}</span>;
+export default function DisplayCounter({ count }) {
+  return <span className="text-[200px]">{count}</span>;
 }
