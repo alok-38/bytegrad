@@ -1,17 +1,9 @@
-import Count from "./components/Count";
-import CountButtons from "./components/CountButtons";
-import ResetButton from "./components/ResetButton";
-import Title from "./components/Title";
+import Card from "./components/Card";
 
 export default function App() {
   return (
     <main>
-      <div>
-        <Title />
-        <Count />
-        <ResetButton />
-        <CountButtons />
-      </div>
+      <Card />
     </main>
   );
 }
