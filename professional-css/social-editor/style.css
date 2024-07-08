@@ -75,11 +75,59 @@ button {
 @keyframes fade-in-from-top {
   0% {
     opacity: 0;
-	transform: translateY(-50px);
+    transform: translateY(-50px);
   }
 
   100% {
     opacity: 1;
-	transform: translateY(0px);
+    transform: translateY(0px);
   }
+}
+
+/* App container */
+.app__container {
+  display: flex;
+  height: calc(100vh - 55px);
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: #10171a;
+  width: 75px;
+}
+
+.menu__button {
+  padding: 19px 0;
+  color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  transition: all 0.4s;
+  animation: fade-in-from-left 0.5s;
+}
+
+.menu__button:hover {
+  background-color: #2b363b;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu__button:focus {
+  background-color: #2b363b;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu__button--active {
+  background-color: #2b363b;
+  color: #fff;
+}
+
+/* footer */
+.footer {
+    margin-top: auto;
+    margin-bottom: 60px;
 }
