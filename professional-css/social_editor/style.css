@@ -1,0 +1,35 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    border: initial;
+    background-color: initial;
+}
+
+/* header styles */
+.header {
+    background-image: linear-gradient(to right, #18a0be, #622db9);
+}
+
+.logo {
+
+}
+
+.dd-toggle {
+
+}
+
+.dd-toggle__icon {
+
+}
+
+.dd-toggle__img {
+
+}
+
+.dd-toggle__text {
+
+}
