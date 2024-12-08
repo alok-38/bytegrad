@@ -26,6 +26,18 @@ button {
     }
 }
 
+@keyframes fade-in-from-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
 /* Base styles */
 .app {
     font-family: 'Lato', sans-serif;
@@ -152,6 +164,19 @@ button {
 .menu__text {
     font-weight: 500;
     font-size: 12px;
+}
+
+/* footer */
+.footer {
+    margin-top: auto;
+    margin-bottom: 60px;
+    transform: rotate(-90deg);
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.15);
+    font-size: 12px;
+    white-space: nowrap;
 }
 
 /* --------------------- */
