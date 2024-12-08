@@ -279,3 +279,50 @@ button {
     background-color: #edf1f3;
     flex: 1;
 }
+
+.info-bar {
+    height: 50px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #d6dde1;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.breadcrumbs {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+}
+
+.breadcrumbs__link {
+    color: #a6adb1;
+    text-decoration: none;
+}
+
+.breadcrumbs__icon {
+    color: #a6adb1;
+    margin: 0 13px;
+}
+
+.breadcrumbs__name {
+    color: #2e3335;
+    font-weight: 500;
+}
+
+.button {
+    background-color: #375bb6;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 500px;
+    transition: all 0.4s;
+}
+
+.button:hover,
+.button:focus {
+    background-color: #26438d;
+}
