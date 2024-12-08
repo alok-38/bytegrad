@@ -35,6 +35,10 @@ button {
     /* width: 100vw; */
 }
 
+.app__container {
+
+}
+
 /* header styles */
 .header {
     background-image: linear-gradient(to right, #18a0be, #622db9);
@@ -87,3 +91,21 @@ button {
 }
 
 .dd-toggle__text {}
+
+/* -------------------- */
+
+.sidebar {
+
+}
+
+/* --------------------- */
+
+.panel {
+
+}
+
+/* ---------------------- */
+
+.main {
+    
+}
