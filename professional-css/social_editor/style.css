@@ -13,6 +13,19 @@ button {
     outline: none;
 }
 
+/* Keyframes */
+@keyframes fade-in-from-top {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
 /* Base styles */
 .app {
     font-family: 'Lato', sans-serif;
@@ -32,6 +45,7 @@ button {
 .logo {
     align-self: center;
     margin: 0 30px 0 20px;
+    animation: fade-in-from-top 0.5s;
 }
 
 .dd-toggle {
@@ -39,6 +53,7 @@ button {
     padding: 0 13px;
     cursor: pointer;
     transition: all 0.4s;
+    animation: fade-in-from-top 0.5s;
 }
 
 .dd-toggle:hover {
