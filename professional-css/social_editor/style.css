@@ -7,24 +7,61 @@
 button {
     border: initial;
     background-color: initial;
+    color: inherit;
+    font: inherit;
+    /* Make sure there is a visual indicator for focus state */
+    outline: none;
+}
+
+/* Base styles */
+.app {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    color: #ffffff;
+    /* height: 100vh; */
+    /* width: 100vw; */
 }
 
 /* header styles */
 .header {
     background-image: linear-gradient(to right, #18a0be, #622db9);
+    height: 55px;
+    display: flex;
 }
 
 .logo {
-
+    align-self: center;
+    margin: 0 30px 0 20px;
 }
 
 .dd-toggle {
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0 13px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.dd-toggle:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.07);
 
 }
 
-.dd-toggle__icon {
-
+.dd-toggle:focus {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.07);
 }
+
+.dd-toggle:nth-of-type(4) {
+    margin-left: auto;
+}
+
+.dd-toggle:last-child {
+    display: flex;
+    align-items: center;
+}
+
+.dd-toggle__icon {}
 
 .dd-toggle__img {
     height: 30px;
@@ -34,6 +71,4 @@ button {
     margin-right: 7px;
 }
 
-.dd-toggle__text {
-
-}
+.dd-toggle__text {}
