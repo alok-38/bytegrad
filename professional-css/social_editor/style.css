@@ -31,12 +31,12 @@ button {
     font-family: 'Lato', sans-serif;
     font-size: 15px;
     color: #ffffff;
-    /* height: 100vh; */
-    /* width: 100vw; */
+    height: 100vh;
+    width: 100vw;
 }
 
 .app__container {
-
+    display: flex;
 }
 
 /* header styles */
@@ -95,17 +95,21 @@ button {
 /* -------------------- */
 
 .sidebar {
-
+    background-color: #10171a;
+    width: 75px;
+    height: 100vh;
 }
 
 /* --------------------- */
 
 .panel {
-
+    background-color: #2b363c;
+    width: 350px;
 }
 
 /* ---------------------- */
 
 .main {
-    
+    background-color: #edf1f3;
+    flex: 1;
 }
