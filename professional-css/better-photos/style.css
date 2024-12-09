@@ -7,6 +7,26 @@
     box-sizing: border-box;
 }
 
+input {
+    font: inherit;
+    border: none;
+}
+
+button {
+    border: none;
+    background-color: initial;
+    outline: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 /* Base styles */
 .page {
     font-family: 'Poppins', sans-serif;
@@ -38,16 +58,43 @@
 }
 
 /* styles */
-.header {}
+.header {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin: 0 48px 0 26px;
+}
+
+.search__submit {}
+
+.search__icon {}
+
+.nav__list {}
+
+.nav__item {}
+
+.nav__link {}
+
+.nav__icon {}
 
 .sidebar {
     background-color: #11271f;
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
 }
 
 .gallery {
     background-color: #eef3f4;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
 }
 
 .steps {
     background-color: #e7edee;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
 }
