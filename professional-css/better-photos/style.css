@@ -14,15 +14,40 @@
     color: #ffffff;
     display: flex;
     justify-content: center;
-    background-image: 
-    url(https://bytegrad.com/course-assets/css/2/pattern.svg),
-    linear-gradient(to bottom right, #8FD861, #2CC695 90%);
+    background-image:
+        url(https://bytegrad.com/course-assets/css/2/pattern.svg),
+        linear-gradient(to bottom right, #8FD861, #2CC695 90%);
+    /* firefox and edge */
+    scrollbar-width: none;
+}
+
+/* chrome */
+.page::-webkit-scrollbar {
+    display: none;
 }
 
 .app {
-    height: 1240px;
-    width: 1030px;
+    width: 1240px;
+    height: 1030px;
     background-color: #ffffff;
     box-shadow: 0 30px 100px rgba(0, 0, 0, 0.35);
     margin: 80px 0;
+    display: grid;
+    grid-template-columns: 355px 1fr;
+    grid-template-rows: 65px 724px 1fr;
+}
+
+/* styles */
+.header {}
+
+.sidebar {
+    background-color: #11271f;
+}
+
+.gallery {
+    background-color: #eef3f4;
+}
+
+.steps {
+    background-color: #e7edee;
 }
