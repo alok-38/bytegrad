@@ -11,18 +11,20 @@ let count = 0;
 
 // Function to update the count
 const updateCountDisplay = () => {
-    // Update the displayed count
     spanEl.textContent = count;
 };
 
 // Function to handle incrementing and decrementing
 const handleCountChange = (type) => {
     if (type === 'increment') {
-        count++;
-        if (count === 5) {
-            h1El.textContent = "Please subscribe to increase count!";
-            h1El.style.width = "100%";
-            mainEl.style.opacity = ".6";
+        // Prevent incrementing beyond 5
+        if (count < 5) {
+            count++;
+            if (count === 5) {
+                h1El.textContent = "Please subscribe to increase count!";
+                h1El.style.width = "100%";
+                mainEl.style.opacity = ".6";
+            }
         }
     } else if (type === 'decrement') {
         if (count === 5) {
@@ -49,8 +51,8 @@ document.addEventListener("keydown", (event) => {
         }
     }
 
-    // Space bar or up-arrow key increments
-    if (event.key === " " || event.key === "ArrowUp") {
+    // Space bar or up-arrow key increments (if count is less than 5)
+    if ((event.key === " " || event.key === "ArrowUp") && count < 5) {
         handleCountChange('increment');
     }
     // Down-arrow key decrements
@@ -64,7 +66,7 @@ buttons.forEach(button => {
     button.addEventListener('click', (event) => {
         // Check the data-action attribute to decide whether to increment or decrement
         const action = event.target.closest('button').dataset.action;  // Fix: Get the correct data-action from the button
-        if (action === "increment") {
+        if (action === "increment" && count < 5) {
             handleCountChange('increment');
         } else if (action === "decrement") {
             handleCountChange('decrement');
