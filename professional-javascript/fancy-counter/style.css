@@ -213,3 +213,25 @@ body {
         font-size: 28px;
     }
 }
+
+/* General styling for disabled buttons */
+.counter__button:disabled {
+    opacity: 0.5;
+    /* Make the button semi-transparent */
+    cursor: not-allowed;
+    /* Change the cursor to "not allowed" symbol */
+    pointer-events: none;
+    /* Disable any mouse interactions */
+    background-color: #dcdcdc;
+    /* Light gray background to indicate inactivity */
+    color: #a9a9a9;
+    /* Light gray text */
+}
+
+/* Remove hover effect on disabled buttons */
+.counter__button:disabled:hover {
+    background-color: #dcdcdc;
+    /* Keep the same gray background */
+    color: #a9a9a9;
+    /* Keep the same light gray text */
+}
