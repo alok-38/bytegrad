@@ -11,6 +11,7 @@ let count = 0;
 
 // Function to update the count
 const updateCountDisplay = () => {
+    // Update the displayed count
     spanEl.textContent = count;
 };
 
