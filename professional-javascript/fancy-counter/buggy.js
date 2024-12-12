@@ -22,15 +22,17 @@ const incrementAndDecrement = (event) => {
             incrementButton.disabled = true;
             incrementButton.blur();
         } else {
-            incrementButton.disabled = false;
             h1El.textContent = h1TextContent; // Reset to original text when below 5
+            incrementButton.disabled = false; // Enable increment button if count is less than 5
         }
     }
+    
     // Handle decrement button
     else if (button.dataset.action === 'decrement') {
         --count;
         if (count < 5) {
             h1El.textContent = h1TextContent; // Restore original text when count is less than 5
+            incrementButton.disabled = false; // Re-enable increment button when count is less than 5
         }
     }
 
@@ -45,6 +47,7 @@ const incrementAndDecrement = (event) => {
         decrementButton.disabled = false;  // Re-enable when count is above 0
     }
 };
+
 
 // Reset function (resets the count to 0 and disables the decrement button)
 const resetCounter = () => {
