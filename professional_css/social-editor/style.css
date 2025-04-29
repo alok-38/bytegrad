@@ -1,0 +1,10 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    background-image: linear-gradient(to right, #18A0BE, #3F4DBA, #622DB9);
+}
